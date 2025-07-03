@@ -20,7 +20,7 @@ ON
 
 SELECT
     p.property_id,
-    p.name AS property_name
+    p.name AS property_name,
     p.location,
     r.review_id,
     r.rating,
