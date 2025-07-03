@@ -30,7 +30,10 @@ FROM
 LEFT JOIN
     bookings b on p.property_id = b.property_id
 LEFT JOIN
-    reviews r ON b.booking_id = r.booking_id;
+    reviews r ON b.booking_id = r.booking_id
+ORDER BY
+    p.property_id,
+    r.review_id;
 
 -- FULL OUTER JOIN: Users and Bookings
 
