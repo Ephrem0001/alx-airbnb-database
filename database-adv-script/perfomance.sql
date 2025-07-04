@@ -1,4 +1,6 @@
--- Initial complex query: All bookings with user, property, and payment details
+-- Analyze performance of the initial complex query
+
+EXPLAIN ANALYZE
 SELECT
     b.booking_id,
     b.start_date,
@@ -20,5 +22,8 @@ JOIN
     properties p ON b.property_id = p.property_id
 LEFT JOIN
     payments pay ON b.booking_id = pay.booking_id
+WHERE
+    b.start_date >= '2023-01-01'
+    AND pay.amount > 0
 ORDER BY
     b.start_date;
